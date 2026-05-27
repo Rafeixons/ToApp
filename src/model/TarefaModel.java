@@ -1,17 +1,12 @@
-
 package model;
 
-
 public class TarefaModel {
-    
+
     // Atributos
-    
     private String nome;
     private boolean concluida;
 
-    
     // Construtores
-    
     public TarefaModel(String nome, boolean concluida) {
         this.nome = nome;
         this.concluida = concluida = false;
@@ -19,9 +14,7 @@ public class TarefaModel {
 
     public TarefaModel() {
     }
-    
-    
-    
+
     public String getNome() {
         return nome;
     }
@@ -40,6 +33,13 @@ public class TarefaModel {
 
     @Override
     public String toString() {
-        return "Tarefa: " + " \n nome = " + nome + "\nconcluida = " + concluida;
+        String status = "";
+        if (isConcluida()) {
+            status = "Concluída";
+        } else {
+            status = "Não concluída";
+        }
+
+        return "Tarefa: " + "Nome = " + nome + "\nSituação = " + status;
     }
 }
